@@ -14,8 +14,18 @@ java {
 	}
 }
 
+bootRun {
+	systemProperty('spring.profiles.active', 'testdata')
+}
+
 repositories {
 	mavenCentral()
+}
+// 프로젝트를 빌드할 때 그래들이 설정 프로세서를 사용하도록 설정한다.
+configurations {
+	compileOnly{
+		extendsFrom annotationProcessor
+	}
 }
 
 dependencies {
@@ -24,7 +34,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
+	annotationProcessor'org.springframework.boot:spring-boot-configuration-processor'
 
 }
 
