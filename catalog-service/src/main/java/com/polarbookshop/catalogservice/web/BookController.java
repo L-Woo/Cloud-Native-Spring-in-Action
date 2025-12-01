@@ -2,12 +2,13 @@ package com.polarbookshop.catalogservice.web;
 
 import com.polarbookshop.catalogservice.domain.Book;
 import com.polarbookshop.catalogservice.domain.BookService;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
-@RequestMapping("books")
+@RequestMapping("books/")
 public class BookController {
     private final BookService bookService;
 
